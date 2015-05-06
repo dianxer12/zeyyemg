@@ -1,0 +1,7 @@
+select djr "工号",
+       (select yhm from jzs.yhb where yhdm = a.djr) "操作人",
+       sum(decode(ssy,null,0,1)) "登记生命体征总人次",
+       sum(decode(smtz_sbdm,null,0,1)) "导入生命体征总人次"
+from jzs.jz_jzyjbrdjb a
+where rysj >= to_date('20130701','yyyymmdd')
+group by djr

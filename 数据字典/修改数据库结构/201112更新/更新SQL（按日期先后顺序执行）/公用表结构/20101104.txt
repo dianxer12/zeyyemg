@@ -1,0 +1,1 @@
+alter table tjtjmxb modify code4 varchar2(100);

@@ -1,0 +1,3 @@
+-- Add/modify columns 增加主管科室
+alter table JZ_JZLQXXDJB0 add ZGKSMC varchar2(30);
+alter table JZ_JZLQXXDJB0 add ZGKSDM varchar2(10);

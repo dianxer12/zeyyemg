@@ -1,0 +1,38 @@
+--更新非法性别
+update jz_jzlqxxdjb a set xb = (select xb from jz_brjbxxk where jzkh = a.jzkh)
+where xb not in (1,2);
+--建备份表
+CREATE TABLE jz_jzlqxxdjb_BAK AS SELECT * FROM jz_jzlqxxdjb;
+--建备份表索引
+CREATE INDEX IDX_jz_jzlqxxdjb_BAK ON jz_jzlqxxdjb_BAK(JLXH) NOLOGGING;
+--将性别置空
+ALTER TABLE jz_jzlqxxdjb MODIFY XB NULL;
+UPDATE jz_jzlqxxdjb SET XB = NULL;
+COMMIT;
+--修改字段类型
+ALTER TABLE jz_jzlqxxdjb MODIFY XB VARCHAR2(4);
+--更新性别
+UPDATE jz_jzlqxxdjb a SET XB = (SELECT DECODE(XB,1,'男',2,'女') from jz_jzlqxxdjb_bak where jlxh = a.jlxh);
+COMMIT;
+--修改字段属性
+ALTER TABLE jz_jzlqxxdjb MODIFY XB VARCHAR2(4) NOT NULL;
+
+
+--更新非法性别
+update jz_jzlqxxdjb_temp a set xb = (select xb from jz_brjbxxk where jzkh = a.jzkh)
+where xb not in (1,2);
+--建备份表
+CREATE TABLE jz_jzlqxxdjb_temp_BAK AS SELECT * FROM jz_jzlqxxdjb_temp;
+--建备份表索引
+CREATE INDEX IDX_jz_jzlqxxdjb_temp_BAK ON jz_jzlqxxdjb_temp_BAK(JLXH) NOLOGGING;
+--将性别置空
+ALTER TABLE jz_jzlqxxdjb_temp MODIFY XB NULL;
+UPDATE jz_jzlqxxdjb_temp SET XB = NULL;
+COMMIT;
+--修改字段类型
+ALTER TABLE jz_jzlqxxdjb_temp MODIFY XB VARCHAR2(4);
+--更新性别
+UPDATE jz_jzlqxxdjb_temp a SET XB = (SELECT DECODE(XB,1,'男',2,'女') from jz_jzlqxxdjb_temp_bak where jlxh = a.jlxh);
+COMMIT;
+--修改字段属性
+ALTER TABLE jz_jzlqxxdjb_temp MODIFY XB VARCHAR2(4) NOT NULL;

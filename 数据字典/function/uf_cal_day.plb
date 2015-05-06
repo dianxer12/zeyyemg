@@ -1,0 +1,26 @@
+create or replace function uf_cal_day wrapped 
+a000000
+354
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+8
+105 ff
+Fh83jcRpr1W0/gqLgxEoRIonoAEwgwBKLcsVfHSiWPiUHLa9FGdZw3R5hmcad/Mmaqtcyhsr
+OflBoKGYOs9yvOs3e99Kj/hKcgi2D4auIRiMnSzdL01AUhOBUrPTesClNo6SbwB1a+GpB8ao
+VNEMUvEyPQY9UF2yES0LUDytlrSVFVaqv2nTY24RWjWKpwdCjO0eNQLUPLffI/CChPKgb85A
+ibM9ew9wJIZaxZBHC0jRnvF7G2QZ5PuaM2d9
+
+/

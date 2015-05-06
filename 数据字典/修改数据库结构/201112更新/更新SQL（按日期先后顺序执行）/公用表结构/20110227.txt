@@ -1,0 +1,110 @@
+alter table ksdmb add khfl varchar2(20);
+
+alter table xtcsb add jlxh number(10);
+alter table xtcsb modify csmc varchar2(100);
+alter table xtcsb modify csz1 varchar2(100);
+alter table xtcsb modify csz2 number(4,2);
+
+update xtcsb set jlxh = rownum;
+
+commit;
+
+alter table xtcsb drop primary key cascade;
+drop index PK_XTCSB_XTXHCSMC;
+alter table xtcsb add constraint pk_xtcsb primary key(jlxh);
+create index idx_xtcsb_csmc on xtcsb(csmc);
+
+create sequence seq_xtcsb_jlxh start with 138;
+
+
+drop index IDX_CZRZB_CZSJ;
+
+drop table CZRZB cascade constraints;
+
+/*==============================================================*/
+/* Table: CZRZB                                                 */
+/*==============================================================*/
+create table CZRZB  (
+   JLXH                 NUMBER(10)                      not null,
+   CZMC                 VARCHAR2(20)                    not null,
+   CZSJ                 DATE,
+   JQM                  VARCHAR2(50),
+   IPDZ                 VARCHAR2(15),
+   BM                   VARCHAR2(50),
+   GJZ                  VARCHAR2(20),
+   ZDRZ                 VARCHAR2(4000),
+   constraint PK_CZRZB primary key (JLXH)
+);
+
+/*==============================================================*/
+/* Index: IDX_CZRZB_CZSJ                                        */
+/*==============================================================*/
+create index IDX_CZRZB_CZSJ on CZRZB (
+   CZSJ ASC
+);
+
+create sequence SEQ_CZRZB_JLXH
+start with 1;
+
+create or replace trigger TRI_XTCSB 
+before insert or delete or update on xtcsb 
+for each row
+declare
+    ll_jlxh number(10);
+    ls_jqm  varchar2(50);
+    ls_ipdz varchar2(15);
+    ls_zdrz varchar2(500);
+begin
+    select sys_context('USERENV','TERMINAL'),sys_context('USERENV','IP_ADDRESS')
+      into ls_jqm,ls_ipdz 
+      from dual;
+    if inserting then
+       select seq_xtcsb_jlxh.nextval
+         into ll_jlxh
+         from dual;
+       :new.jlxh := ll_jlxh;
+       
+       insert into czrzb(jlxh,czmc,czsj,jqm,ipdz,bm,gjz,zdrz)
+       values(seq_czrzb_jlxh.nextval,'insert',sysdate,ls_jqm,ls_ipdz,'xtcsb',to_char(:new.jlxh),null);
+    end if;
+    if deleting then
+       insert into czrzb(jlxh,czmc,czsj,jqm,ipdz,bm,gjz,zdrz)
+       values(seq_czrzb_jlxh.nextval,'delete',sysdate,ls_jqm,ls_ipdz,'xtcsb',to_char(:old.jlxh),'XTXH:'||nvl(to_char(:old.xtxh),'Пе')||'|'||'CSFL:'||nvl(to_char(:old.csfl),'Пе')||'|'||'CSMC:'||nvl(to_char(:old.csmc),'Пе')||'|'||'CSZ1:'||nvl(to_char(:old.csz1),'Пе')||'|'||'CSZ2:'||nvl(to_char(:old.csz2),'Пе')||'|'||'CSZ3:'||nvl(to_char(:old.csz3,'yyyymmdd'),'Пе')||'|'||'BZ:'||nvl(to_char(:old.bz),'Пе')||'|'||'CSRQ:'||nvl(to_char(:old.csrq,'yyyymmdd'),'Пе')||'|'||'ISUPDATE:'||nvl(to_char(:old.isupdate),'Пе')||'|');
+    end if;
+    if updating then
+       if (nvl(to_char(:old.xtxh),'Пе') <> nvl(to_char(:new.xtxh),'Пе')) then --1
+          ls_zdrz := ls_zdrz||'XTXH:'||nvl(to_char(:old.xtxh),'Пе')||'|'||nvl(to_char(:new.xtxh),'Пе')||';';
+       end if;
+       if (nvl(:old.csfl,'Пе') <> nvl(:new.csfl,'Пе')) then --2
+          ls_zdrz := ls_zdrz||'CSFL:'||nvl(to_char(:old.csfl),'Пе')||'|'||nvl(to_char(:new.csfl),'Пе')||';';
+       end if;
+       if (nvl(:old.csmc,'Пе') <> nvl(:new.csmc,'Пе')) then --3
+          ls_zdrz := ls_zdrz||'CSMC:'||nvl(to_char(:old.csmc),'Пе')||'|'||nvl(to_char(:new.csmc),'Пе')||';';
+       end if;
+       if (nvl(:old.csz1,'Пе') <> nvl(:new.csz1,'Пе')) then --4
+          ls_zdrz := ls_zdrz||'CSZ1:'||nvl(to_char(:old.csz1),'Пе')||'|'||nvl(to_char(:new.csz1),'Пе')||';';
+       end if;
+       if (nvl(to_char(:old.csz2),'Пе') <> nvl(to_char(:new.csz2),'Пе')) then --5
+          ls_zdrz := ls_zdrz||'CSZ2:'||nvl(to_char(:old.csz2),'Пе')||'|'||nvl(to_char(:new.csz2),'Пе')||';';
+       end if;
+       if (nvl(to_char(:old.csz3,'yyyymmdd'),'Пе') <> nvl(to_char(:new.csz3,'yyyymmdd'),'Пе')) then --6
+          ls_zdrz := ls_zdrz||'CSZ3:'||nvl(to_char(:old.csz3,'yyyymmdd'),'Пе')||'|'||nvl(to_char(:new.csz3,'yyyymmdd'),'Пе')||';';
+       end if;
+       if (nvl(:old.bz,'Пе') <> nvl(:new.bz,'Пе')) then --7
+          ls_zdrz := ls_zdrz||'BZ:'||nvl(to_char(:old.bz),'Пе')||'|'||nvl(to_char(:new.bz),'Пе')||';';
+       end if;
+       if (nvl(to_char(:old.csrq,'yyyymmdd'),'Пе') <> nvl(to_char(:new.csrq,'yyyymmdd'),'Пе')) then --8
+          ls_zdrz := ls_zdrz||'CSRQ:'||nvl(to_char(:old.csrq,'yyyymmdd'),'Пе')||'|'||nvl(to_char(:new.csrq,'yyyymmdd'),'Пе')||';';
+       end if;
+       if (nvl(to_char(:old.isupdate),'Пе') <> nvl(to_char(:new.isupdate),'Пе')) then --9
+          ls_zdrz := ls_zdrz||'ISUPDATE:'||nvl(to_char(:old.isupdate),'Пе')||'|'||nvl(to_char(:new.isupdate),'Пе')||';';
+       end if;
+       
+       if (length(ls_zdrz) > 0) then
+          insert into czrzb(jlxh,czmc,czsj,jqm,ipdz,bm,gjz,zdrz)
+          values(seq_czrzb_jlxh.nextval,'update',sysdate,ls_jqm,ls_ipdz,'xtcsb',to_char(:new.jlxh),ls_zdrz);
+       end if;
+    end if;
+end TRI_XTCSB;
+
+/

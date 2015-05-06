@@ -1,0 +1,28 @@
+create or replace procedure up_auto_interface wrapped 
+a000000
+354
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+7
+1cd 164
+E0hHnQjs3ug75RrbtbroK456xGQwg5nnm7+fMr2ywFwWYuOuVmL60HJH1aFi8gxZ3Fy4dIvA
+wDL+0oYGnrK4UnRSXKUYGP4Ym71f47gIwGVpuF0JaWnnn7LMuMv+aUtcUOefgVIyQKVorOQQ
+NeUAc+F2hHpMc+aOFQBxN5+i6azDe/w3EYAkH0S7cA8XS6Z1+9O9myj+mYFEGIgnwDUqrfw6
+NjkSPrQ+NoA51pBrCnB0wqsacWrrllcUWh0aFHzmgHOSFdWYdyo38rKO5NaOaUPcTNqBlGaw
+veuyzKb1fGnBjXkev+S+uOdRFexXlvgCks502NWQcxAQAISpdOokH/Y5phvHN7g=
+
+/
+

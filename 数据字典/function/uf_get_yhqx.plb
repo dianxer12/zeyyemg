@@ -1,0 +1,28 @@
+create or replace function uf_get_yhqx wrapped 
+a000000
+354
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+8
+1d2 171
+/jad4Xy8E4YcR9F8L4WicO0MAm0wg3nI10hqyi9GEv9eivNm1fIKQatDqQh7yjhu4LiKcc/8
+cg0J1Q0gmkRudwnH4HUgvxqQe1QpMvbuHjIjEjpuPxkkvFh9G0w3YVCZSY24KEStwqunb1sH
+IleZ3yFse1BVnqYjB0x8P98x75o78noR/ZMHOWxrGXwxOR4x7B+6HL1pSyCW2TEmTAXdTfIv
+lU1BWxYprevVtiI+9efggs41rxyXFJtm57pz8zpPX+UnJdyOmdPwTjSJdzs0+LrMJmRE58bv
+pJZ4w4hJbp2+5sUUQboPEyWkjQF0MAKfSlMOsAB+61cJ6OK3R2MDQkYlZpmB9WcklUGfv53g
+/iD9
+
+/

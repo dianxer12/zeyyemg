@@ -1,0 +1,33 @@
+create or replace function uf_get_ews wrapped 
+a000000
+354
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+8
+a78 2e6
+qB93vHURy/AiYwxdIAk9vO15xYgwgzun2UgFfC/pmPCd4J/Ao7HKgUuVg57KY/VWZ8wd7W7Y
+oPL4+3mzmpaaym5aBFuHBGUmEldq2u/0B7y8u5csKuRzrfkjc4K8+fjtdkpyaTxp/tBEICtq
+TgxS5Lmu9Umqd2GW+aUtpYA6pXfZCMh4/sY0vSBr7kyaVPuJzeGm5SN3NdKKZUyVxNpCC4+w
+PNzU1eVJ/RkzXBfov22sJIkNtqrZqYpveGkc3RQ/W45F72SVXfAf8ufwj4LIKmsn3ocNcYfu
+AGtxp7EV9NYll09fZtfxoSuNnh1Av/jYxZigzJoBL3n18qMntuqxli+QKZkZkFNUV1HIbaXM
+ZWpAtn4RVGVqJb2nPiFuhPqIRR8vZqEiQz39nEwqpSvakZb8ExtaaqQBv2RU3qnOasj/nQPn
+78nzb+8Mj2/zc2ZLNgskGWmBL4YFK02CzvItTNVdwtktP6HtHpvDvydFybSHgSnw6MQDIVhR
+tk5GEFaf2CkwEPq8/lg287yHabqB8tQf6pfpvubmS0IMFUgT01WDiWti/gjD63TNUyggKjQB
+nBTRdppL1drRnSMwagKjzi4XmtSziI+K6NS5L+3eT2GVZhGdAHs1dxhZSy3JhtDb8CH9TMIL
+zEOlg1w8sIjPkI0i1sooS0CT4OdL35MGPt3sC/QiU0AAmbhJZYQThOyJloGkUki3m/l8IqVI
+ifGutfvUNFxM
+
+/
