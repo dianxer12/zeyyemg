@@ -1,0 +1,26 @@
+set NLS_LANG=AMERICAN_AMERICA.USACII7 
+£®ªÚ’ﬂ£∫set NLS_LANG=AMERICAN_AMERICA.WE8ISO8859P1 £©
+
+wrap10g iname=f:\wrap\UF_GET_HLRYJBXX.sql oname=f:\wrap\UF_GET_HLRYJBXX.plb
+wrap10g iname=f:\wrap\uf_get_hlryjdkh.sql oname=f:\wrap\uf_get_hlryjdkh.plb
+wrap10g iname=f:\wrap\uf_get_hlryjdkhhz.sql oname=f:\wrap\uf_get_hlryjdkhhz.plb
+wrap10g iname=f:\wrap\uf_get_hlryndkh.sql oname=f:\wrap\uf_get_hlryndkh.plb
+wrap10g iname=f:\wrap\uf_get_hlryxf.sql oname=f:\wrap\uf_get_hlryxf.plb
+wrap10g iname=f:\wrap\uf_get_hlryxfhz.sql oname=f:\wrap\uf_get_hlryxfhz.plb
+wrap10g iname=f:\wrap\uf_get_hlzlkz_fsz.sql oname=f:\wrap\uf_get_hlzlkz_fsz.plb
+wrap10g iname=f:\wrap\uf_get_hlzlkz_fsz_nj.sql oname=f:\wrap\uf_get_hlzlkz_fsz_nj.plb
+wrap10g iname=f:\wrap\uf_get_ywmb_csz1.sql oname=f:\wrap\uf_get_ywmb_csz1.plb
+wrap10g iname=f:\wrap\uf_get_ywmb_csz2.sql oname=f:\wrap\uf_get_ywmb_csz2.plb
+wrap10g iname=f:\wrap\uf_get_yhqx.sql oname=f:\wrap\uf_get_yhqx.plb
+
+wrap10g iname=f:\wrap\uf_get_bzksdm.sql oname=f:\wrap\uf_get_bzksdm.plb
+wrap10g iname=f:\wrap\uf_get_bzksmc.sql oname=f:\wrap\uf_get_bzksmc.plb
+wrap10g iname=f:\wrap\uf_get_hlzlkzmbmx.sql oname=f:\wrap\uf_get_hlzlkzmbmx.plb
+
+wrap10g iname=f:\wrap\up_hlrysjhzdl.sql oname=f:\wrap\up_hlrysjhzdl.plb
+wrap10g iname=f:\wrap\up_set_hlryjdkhhz.sql oname=f:\wrap\up_set_hlryjdkhhz.plb
+wrap10g iname=f:\wrap\up_set_hlryndkhhz.sql oname=f:\wrap\up_set_hlryndkhhz.plb
+wrap10g iname=f:\wrap\up_set_hlryxfhz.sql oname=f:\wrap\up_set_hlryxfhz.plb
+wrap10g iname=f:\wrap\up_sync_hlryhljx_yjjx.sql oname=f:\wrap\up_sync_hlryhljx_yjjx.plb
+
+

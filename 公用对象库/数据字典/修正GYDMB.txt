@@ -1,0 +1,75 @@
+CREATE TABLE GYDMB_OLD AS SELECT * FROM GYDMB;
+
+drop index IDX_GYDMB_BZ;
+
+drop index IDX_GYDMB_SRM;
+
+drop index IDX_GYDMB_DMMC;
+
+drop table GYDMB cascade constraints;
+
+/*==============================================================*/
+/* Table: GYDMB                                                 */
+/*==============================================================*/
+create table GYDMB  (
+   DMLB                 VARCHAR2(10)                    not null,
+   DMXH                 NUMBER(10)                      not null,
+   DMMC                 VARCHAR2(50),
+   SRM                  VARCHAR2(25)                    not null,
+   BZ                   VARCHAR2(30),
+   TS                   VARCHAR2(30),
+   SYCS                 NUMBER(10)                     default 0,
+   PXXH                 NUMBER(10),
+   constraint PK_GYDMB primary key (DMLB, DMXH)
+);
+
+comment on column GYDMB.DMLB is
+'代码类别';
+
+comment on column GYDMB.DMXH is
+'代码序号 ';
+
+comment on column GYDMB.DMMC is
+'代码名称';
+
+comment on column GYDMB.SRM is
+'输入码';
+
+comment on column GYDMB.BZ is
+'备注';
+
+comment on column GYDMB.TS is
+'提示';
+
+comment on column GYDMB.SYCS is
+'使用次数';
+
+comment on column GYDMB.PXXH is
+'排序序号';
+
+/*==============================================================*/
+/* Index: IDX_GYDMB_DMMC                                        */
+/*==============================================================*/
+create index IDX_GYDMB_DMMC on GYDMB (
+   DMMC ASC
+);
+
+/*==============================================================*/
+/* Index: IDX_GYDMB_SRM                                         */
+/*==============================================================*/
+create index IDX_GYDMB_SRM on GYDMB (
+   SRM ASC
+);
+
+/*==============================================================*/
+/* Index: IDX_GYDMB_BZ                                          */
+/*==============================================================*/
+create index IDX_GYDMB_BZ on GYDMB (
+   BZ ASC
+);
+
+
+
+INSERT INTO GYDMB SELECT * FROM GYDMB_OLD;
+
+commit;

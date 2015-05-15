@@ -1,0 +1,60 @@
+alter table gydmb add dm varchar2(50);
+create index idx_gydmb_dm on gydmb(dm);
+alter table czrzb modify gjz varchar2(100);
+
+create or replace trigger TRI_GYDMB 
+before insert or delete or update on gydmb 
+for each row
+declare
+    ll_jlxh number(10);
+    ls_jqm  varchar2(50);
+    ls_ipdz varchar2(15);
+    ls_zdrz varchar2(500);
+begin
+    select sys_context('USERENV','TERMINAL'),sys_context('USERENV','IP_ADDRESS')
+      into ls_jqm,ls_ipdz 
+      from dual;
+    if inserting then
+       insert into czrzb(jlxh,czmc,czsj,jqm,ipdz,bm,gjz,zdrz)
+       values(seq_czrzb_jlxh.nextval,'insert',sysdate,ls_jqm,ls_ipdz,'gydmb',to_char(:new.dmxh),null);
+    end if;
+    if deleting then
+       insert into czrzb(jlxh,czmc,czsj,jqm,ipdz,bm,gjz,zdrz)
+       values(seq_czrzb_jlxh.nextval,'delete',sysdate,ls_jqm,ls_ipdz,'gydmb',to_char(:old.dmxh),'DMLB:'||nvl(to_char(:old.dmlb),'Пе')||'|'||'DMXH:'||nvl(to_char(:old.dmxh),'Пе')||'|'||'DM:'||nvl(to_char(:old.dm),'Пе')||'|'||'DMMC:'||nvl(to_char(:old.dmmc),'Пе')||'|'||'SRM:'||nvl(to_char(:old.srm),'Пе')||'|'||'BZ:'||nvl(to_char(:old.bz),'Пе')||'|'||'BZ:'||nvl(to_char(:old.bz),'Пе')||'|'||'TS:'||nvl(to_char(:old.ts),'Пе')||'|'||'SYCS:'||nvl(to_char(:old.sycs),'Пе')||'|'||'PXXH:'||nvl(to_char(:old.pxxh),'Пе')||'|');
+    end if;
+    if updating then
+       if (nvl(to_char(:old.dmlb),'Пе') <> nvl(to_char(:new.dmlb),'Пе')) then --1
+          ls_zdrz := ls_zdrz||'DMLB:'||nvl(to_char(:old.dmlb),'Пе')||'|'||nvl(to_char(:new.dmlb),'Пе')||';';
+       end if;
+       if (nvl(to_char(:old.dmxh),'Пе') <> nvl(to_char(:new.dmxh),'Пе')) then --1
+          ls_zdrz := ls_zdrz||'DMXH:'||nvl(to_char(:old.dmxh),'Пе')||'|'||nvl(to_char(:new.dmxh),'Пе')||';';
+       end if;
+       if (nvl(to_char(:old.dm),'Пе') <> nvl(to_char(:new.dm),'Пе')) then --1
+          ls_zdrz := ls_zdrz||'DM:'||nvl(to_char(:old.dm),'Пе')||'|'||nvl(to_char(:new.dm),'Пе')||';';
+       end if;
+       if (nvl(to_char(:old.dmmc),'Пе') <> nvl(to_char(:new.dmmc),'Пе')) then --1
+          ls_zdrz := ls_zdrz||'DMMC:'||nvl(to_char(:old.dmmc),'Пе')||'|'||nvl(to_char(:new.dmmc),'Пе')||';';
+       end if;
+       if (nvl(to_char(:old.srm),'Пе') <> nvl(to_char(:new.srm),'Пе')) then --1
+          ls_zdrz := ls_zdrz||'SRM:'||nvl(to_char(:old.srm),'Пе')||'|'||nvl(to_char(:new.srm),'Пе')||';';
+       end if;
+       if (nvl(to_char(:old.bz),'Пе') <> nvl(to_char(:new.bz),'Пе')) then --1
+          ls_zdrz := ls_zdrz||'BZ:'||nvl(to_char(:old.bz),'Пе')||'|'||nvl(to_char(:new.bz),'Пе')||';';
+       end if;
+       if (nvl(to_char(:old.ts),'Пе') <> nvl(to_char(:new.ts),'Пе')) then --1
+          ls_zdrz := ls_zdrz||'TS:'||nvl(to_char(:old.ts),'Пе')||'|'||nvl(to_char(:new.ts),'Пе')||';';
+       end if;
+       if (nvl(to_char(:old.sycs),'Пе') <> nvl(to_char(:new.sycs),'Пе')) then --1
+          ls_zdrz := ls_zdrz||'SYCS:'||nvl(to_char(:old.sycs),'Пе')||'|'||nvl(to_char(:new.sycs),'Пе')||';';
+       end if;
+       if (nvl(to_char(:old.pxxh),'Пе') <> nvl(to_char(:new.pxxh),'Пе')) then --1
+          ls_zdrz := ls_zdrz||'PXXH:'||nvl(to_char(:old.pxxh),'Пе')||'|'||nvl(to_char(:new.pxxh),'Пе')||';';
+       end if;
+       
+       if (length(ls_zdrz) > 0) then
+          insert into czrzb(jlxh,czmc,czsj,jqm,ipdz,bm,gjz,zdrz)
+          values(seq_czrzb_jlxh.nextval,'update',sysdate,ls_jqm,ls_ipdz,'gydmb',to_char(:new.dmxh),ls_zdrz);
+       end if;
+    end if;
+end TRI_GYDMB;
+/

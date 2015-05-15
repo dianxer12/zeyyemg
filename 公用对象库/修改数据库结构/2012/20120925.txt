@@ -1,0 +1,2 @@
+alter table gydmb modify bz varchar2(100);
+alter table gydmb modify ts varchar2(100);

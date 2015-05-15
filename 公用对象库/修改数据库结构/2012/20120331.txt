@@ -1,0 +1,66 @@
+--20120331
+drop table QXMXB cascade constraints;
+
+/*==============================================================*/
+/* Table: QXMXB                                                 */
+/*==============================================================*/
+create table QXMXB  (
+   XTXH                 NUMBER(2)                       not null,
+   CDX                  VARCHAR2(20)                    not null,
+   QXDM                 VARCHAR2(100)                   not null,
+   QXMC                 VARCHAR2(100),
+   constraint PK_QXMXB primary key (XTXH, CDX, QXDM)
+);
+
+/
+
+alter table yhz add yhzdj number(1);
+alter table yhb add ksdm varchar2(20);
+alter table yhb modify yhdm varchar2(10);
+alter table filetranslog modify yhdm varchar2(10) null;
+
+drop table YHQX cascade constraints;
+
+/*==============================================================*/
+/* Table: YHQX                                                  */
+/*==============================================================*/
+create table YHQX  (
+   XTXH                 NUMBER(2)                       not null,
+   YHZXH                NUMBER(2)                       not null,
+   YHDM                 VARCHAR2(10)                    not null,
+   constraint PK_YHQX primary key (XTXH, YHZXH, YHDM)
+);
+
+/
+
+insert into yhqx select 1,yhzxh,yhdm from yhb;
+commit;
+
+/
+
+create or replace function uf_get_yhqx(as_id in varchar2,as_cdx in varchar2) return number is
+   vResult number(4);
+begin
+   select count(*)
+     into vResult
+     from yhb a,yhqx b,yhzqx c
+    where a.xtxh = b.xtxh
+      and a.xtxh = c.xtxh
+      and a.yhdm = b.yhdm
+      and b.yhzxh = c.yhzxh
+      and a.xtxh = 5
+      and a.yhdm = as_id
+      and upper(c.cdx) = upper(as_cdx);
+   if vResult is null then
+      vResult := 0;
+   end if;
+   return(vResult);
+end uf_get_yhqx;
+
+/
+
+alter table YHB drop constraints pk_yhb;
+drop index pk_yhb;
+alter table yhb add constraint PK_YHB primary key (XTXH, YHZXH, YHDM);
+
+alter table yhz modify yhzmc varchar2(100);
