@@ -1,0 +1,1 @@
+copy E:\xjback\program\公用对象库\resource_image\Release\resource_image.dll E:\xjback\program\急诊管理系统 /y

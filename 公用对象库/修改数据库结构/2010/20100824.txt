@@ -1,0 +1,3 @@
+alter table xtcsb modify csz2 number(4,2);
+alter table xtcsb add csrq date;
+alter table xtcsb modify csmc varchar2(100);

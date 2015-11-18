@@ -1,0 +1,86 @@
+/*****************************************************
+||	函数名称 ：uf_PackInParam
+||-----------------------------------------------------------------------------------
+||	功能说明 ：组装入参
+||-----------------------------------------------------------------------------------
+||	参数描述 ：参数标识            输入/输出  类型     名称
+||            -------------------------------------------------------------------------
+||
+||	返		回 ：1 — 成功  -1 — 失败
+||-----------------------------------------------------------------------------------
+||	作    者 ：金 伟
+||-----------------------------------------------------------------------------------
+|| 修改时间 ：2011-06-19
+||-----------------------------------------------------------------------------------
+|| 修改记录 ：
+*****************************************************/
+string ls_TransID,ls_outputData,ls_ErrMsg
+string ls_ColName,ls_ColType,ls_ColValue,ls_ColTag
+integer li_Ret,i,j
+long ll_RowCount,ll_ColCount
+DataStore lds_ds
+nvo_XmlParser lnvo_XmlOut,lnvo_XmlOutHead,lnvo_XmlOutBody,lnvo_XmlOutDetail
+
+ls_TransID = as_TransID
+
+lnvo_XmlOut = uf_newXML("root","")
+lnvo_XmlOut.Xmlencoding = "gbk"
+lnvo_XmlOutHead = lnvo_XmlOut.addelement("head",'')
+lnvo_XmlOutBody = lnvo_XmlOut.addelement("body",'')
+
+//获取报文头
+li_Ret = uf_PackageHead(ls_TransID,Ref lnvo_XmlOutHead)
+If li_Ret = ii_Failure Then
+	ls_ErrMsg = '组装入参报文头失败!'
+	Goto Err
+End If
+  
+ //组装报文体
+li_Ret = uf_AddParam2Xml(lnvo_XmlOutBody,astr_Param.inparam)
+If li_Ret = -1 Then 
+	ls_ErrMsg = '组装入参报文体失败'
+	Goto Err
+End If
+
+//将记录集放入Xml中
+If IsValid(astr_Param.datas1) Then
+	lds_ds = astr_Param.datas1
+	ll_RowCount = lds_ds.RowCount()
+	If ll_RowCount >0 Then
+	   lnvo_XmlOutBody.Addelement('rowcount',string(ll_RowCount))
+		
+	   ll_ColCount = long(lds_ds.Object.DataWindow.Column.Count)
+
+		For i=1 to ll_RowCount
+			lnvo_XmlOutDetail = lnvo_XmlOutBody.Addelement('detail')
+			For j=1 to  ll_ColCount
+				ls_ColName = lds_ds.Describe("#"+String(j)+".Name")
+				ls_Coltag = lds_ds.Describe(ls_ColName+".tag")
+				If lower(ls_Coltag)= 'out' Then continue				
+				ls_ColType  = lds_ds.Describe("#"+String(j)+".ColType")
+				If Pos(Ls_Coltype,'string')>0 Or Pos(Ls_ColType,'char')>0 Then
+					ls_ColValue = lds_ds.GetItemString(i,ls_ColName)
+					lnvo_XmlOutDetail.Addelement(ls_ColName,ls_ColValue)
+				End If
+				If Pos(Ls_ColType,'decimal') >0 or Pos(Ls_ColType,'number')>0 Then
+					ls_ColValue = string(lds_ds.GetItemNumber(i,ls_ColName))
+					lnvo_XmlOutDetail.Addelement(ls_ColName,ls_ColValue)
+				End If
+//				If Pos(Ls_ColType,'datatime') >0 Then
+//					ls_ColValue = string(lds_ds.GetItemDateTime(i,ls_ColName),'YYYYMMDDHHMMDD')
+//					lnvo_XmlOutDetail.Addelement(ls_ColName,ls_ColValue)
+//				End If
+			Next
+		Next
+	End If
+End If
+
+//生成Xml
+ls_outputData =  lnvo_XmlOut.GenerateXml(True)
+as_xmloutData = ls_outputData
+
+Return ii_Success
+
+Err:
+ls_outputData = ls_ErrMsg
+Return ii_Failure

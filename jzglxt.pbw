@@ -1,0 +1,9 @@
+Save Format v3.0(19990112)
+@begin Unchecked
+@end;
+@begin Targets
+ 0 "jzglxt.pbt";
+ 1 "..\\\xbb\xa4\xc0\xed\xb2\xbf\xb9\xdc\xc0\xed\xcf\xb5\xcd\xb3\\hlbglxt.pbt";
+@end;
+DefaultTarget "jzglxt.pbt";
+DefaultRemoteTarget "jzglxt.pbt";

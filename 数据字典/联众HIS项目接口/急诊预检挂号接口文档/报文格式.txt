@@ -1,0 +1,43 @@
+2013-11-27 01:18:13:078000	返回	(CCBHEALTHCARD1)<?xml version="1.0" encoding="gbk"?>
+<root>
+	<head>
+		<actdate>20131127</actdate>
+		<trdate>20131127</trdate>
+		<trtime>012954</trtime>
+		<trcode>104010Z203</trcode>
+		<hisseq>2013112703796702</hisseq>
+		<bhpseq/>
+		<filenum>0</filenum>
+		<succflag>1</succflag>
+		<retcode>000</retcode>
+		<retmsg>交易成功</retmsg>
+	</head>
+	<body>
+		<tridx>ZZ01220131127012443_1002_当天挂号_打印</tridx>
+		<preid>21695040</preid>
+		<actno>995000000000468440</actno>
+		<idtype>0</idtype>
+		<idno>332601198008251028</idno>
+		<medid>07421905</medid>
+		<medcardno/>
+		<regfee>5.00</regfee>
+		<treatfee>2.00</treatfee>
+		<regamt>7.00</regamt>
+		<regid>2</regid>
+		<medtime>08:21-08:46</medtime>
+		<regaddr>门诊14楼</regaddr>
+		<medtype>2</medtype>
+		<hisseq>2013112703796702</hisseq>
+		<bhpseq>ZZ01220131127012443_1002_当天挂号_打印</bhpseq>
+		<meddate>2013-11-27</meddate>
+		<jdseq>ZZ01220131127012443_1002_当天挂号_打印</jdseq>
+		<name>阮菊芳</name>
+		<sex>2</sex>
+		<age>33岁</age>
+		<secname>妇科</secname>
+		<docname>陈学军</docname>
+		<medname>专家</medname>
+		<docrank>副高</docrank>
+		<casehflag>0</casehflag>
+	</body>
+</root>

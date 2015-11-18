@@ -1,0 +1,12 @@
+@CRT_DWDMB.sql
+@CRT_XTCSB.sql
+@CRT_XTXXB.sql
+@CRT_YHB.sql
+@CRT_XHB.sql
+@CRT_YHQX.sql
+@CRT_YHZ.sql
+@CRT_YHZQX.sql
+@CRT_XTRZ.sql
+@CRT_GYDMB.sql
+@CRT_KSDMB.sql
+@CRT_TABLEINFO.sql
