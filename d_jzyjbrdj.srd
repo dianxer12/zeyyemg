@@ -1,0 +1,86 @@
+$PBExportHeader$d_jzyjbrdj.srd
+$PBExportComments$Added By xujie 急诊预检病人登记
+release 6;
+datawindow(units=0 timer_interval=0 color=16777215 processing=0 print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=1400 color="536870912" )
+table(column=(type=char(9) update=yes updatewhereclause=yes key=yes name=jlxh dbname="jz_jzyjbrdjb.jlxh" )
+ column=(type=datetime update=yes updatewhereclause=yes name=djrq dbname="jz_jzyjbrdjb.djrq" )
+ column=(type=char(20) update=yes updatewhereclause=yes name=jzkh dbname="jz_jzyjbrdjb.jzkh" )
+ column=(type=char(20) update=yes updatewhereclause=yes name=brxm dbname="jz_jzyjbrdjb.brxm" )
+ column=(type=datetime update=yes updatewhereclause=yes name=csrq dbname="jz_jzyjbrdjb.csrq" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=xb dbname="jz_jzyjbrdjb.xb" values="男	1/女	2/" )
+ column=(type=datetime update=yes updatewhereclause=yes name=rysj dbname="jz_jzyjbrdjb.rysj" )
+ column=(type=char(20) update=yes updatewhereclause=yes name=lxdh dbname="jz_jzyjbrdjb.lxdh" )
+ column=(type=char(20) update=yes updatewhereclause=yes name=zy dbname="jz_jzyjbrdjb.zy" )
+ column=(type=char(50) update=yes updatewhereclause=yes name=lxdz dbname="jz_jzyjbrdjb.lxdz" )
+ column=(type=char(20) update=yes updatewhereclause=yes name=ksmc dbname="jz_jzyjbrdjb.ksmc" )
+ column=(type=char(20) update=yes updatewhereclause=yes name=cbzd dbname="jz_jzyjbrdjb.cbzd" )
+ column=(type=char(20) update=yes updatewhereclause=yes name=brqx dbname="jz_jzyjbrdjb.brqx" )
+ column=(type=char(50) update=yes updatewhereclause=yes name=bz dbname="jz_jzyjbrdjb.bz" )
+ column=(type=decimal(2) updatewhereclause=yes name=tw dbname="jz_jzyjbrdjb.tw" )
+ column=(type=decimal(0) updatewhereclause=yes name=mb dbname="jz_jzyjbrdjb.mb" )
+ column=(type=decimal(2) updatewhereclause=yes name=xy dbname="jz_jzyjbrdjb.xy" )
+ column=(type=decimal(4) updatewhereclause=yes name=xybhd dbname="jz_jzyjbrdjb.xybhd" )
+ column=(type=char(10) update=yes updatewhereclause=yes name=ksdm dbname="jz_jzyjbrdjb.ksdm" )
+ retrieve="SELECT JLXH,  
+       JZKH,
+       DJRQ,
+       RYSJ,
+       BRXM,
+       XB,
+       CSRQ,
+       ZY,
+       KSDM,
+       KSMC,
+       CBZD,
+       BRQX,
+       LXDH,
+       LXDZ,
+       BZ,
+       TW,
+       MB,
+       XY,
+       XYBHD
+  FROM JZ_JZYJBRDJB" update="JZ_JZYJBRDJB" updatewhere=1 updatekeyinplace=no )
+text(band=detail alignment="0" text="初步诊断："border="0" color="0" x="1179" y="548" height="68" width="343"  name=cbzd_t  font.face="宋体" font.height="-11" font.weight="400"  font.family="0" font.pitch="2" font.charset="134" background.mode="1" background.color="536870912" )
+text(band=detail alignment="1" text="病人去向："border="0" color="0" x="2766" y="548" height="68" width="343"  name=brqx_t  font.face="宋体" font.height="-11" font.weight="400"  font.family="0" font.pitch="2" font.charset="134" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="记录序号："border="0" color="0" x="37" y="32" height="68" width="343"  name=jlxh_t  font.face="宋体" font.height="-11" font.weight="400"  font.family="0" font.pitch="2" font.charset="134" background.mode="1" background.color="553648127" )
+text(band=detail alignment="0" text="出生日期："border="0" color="0" x="37" y="204" height="68" width="343"  name=csrq_t  font.face="宋体" font.height="-11" font.weight="400"  font.family="0" font.pitch="2" font.charset="134" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="职    业："border="0" color="0" x="37" y="376" height="68" width="343"  name=zy_t  font.face="宋体" font.height="-11" font.weight="400"  font.family="0" font.pitch="2" font.charset="134" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="科室名称："border="0" color="0" x="37" y="548" height="68" width="343"  name=ksmc_t  font.face="宋体" font.height="-11" font.weight="400"  font.family="0" font.pitch="2" font.charset="134" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="备    注："border="0" color="0" x="37" y="720" height="68" width="343"  name=bz_t  font.face="宋体" font.height="-11" font.weight="400"  font.family="0" font.pitch="2" font.charset="134" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="体    温："border="0" color="0" x="37" y="892" height="68" width="343"  name=tw_t  font.face="宋体" font.height="-11" font.weight="400"  font.family="0" font.pitch="2" font.charset="134" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="脉    搏："border="0" color="0" x="910" y="892" height="68" width="343"  name=mb_t  font.face="宋体" font.height="-11" font.weight="400"  font.family="0" font.pitch="2" font.charset="134" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="(摄氏度)"border="0" color="0" x="608" y="892" height="68" width="279"  font.face="宋体" font.height="-11" font.weight="400"  font.family="0" font.pitch="2" font.charset="134" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="(次/分)"border="0" color="0" x="1481" y="892" height="68" width="279"  font.face="宋体" font.height="-11" font.weight="400"  font.family="0" font.pitch="2" font.charset="134" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="血    压："border="0" color="0" x="1783" y="892" height="68" width="343"  name=xy_t  font.face="宋体" font.height="-11" font.weight="400"  font.family="0" font.pitch="2" font.charset="134" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="(mmhg)"border="0" color="0" x="2354" y="892" height="68" width="279"  font.face="宋体" font.height="-11" font.weight="400"  font.family="0" font.pitch="2" font.charset="134" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="血氧饱和度："border="0" color="0" x="2656" y="892" height="68" width="416"  font.face="宋体" font.height="-11" font.weight="400"  font.family="0" font.pitch="2" font.charset="134" background.mode="1" background.color="536870912" )
+column(band=detail id=12 alignment="0" tabsequence=100 border="4" color="0" x="3122" y="548" height="68" width="361" format="[general]"  name=brqx edit.limit=20 edit.case=any edit.autoselect=yes edit.autohscroll=yes  font.face="宋体" font.height="-11" font.weight="700"  font.family="2" font.pitch="2" font.charset="134" background.mode="1" background.color="536870912" )
+column(band=detail id=15 alignment="0" tabsequence=110 border="4" color="0" x="393" y="720" height="68" width="3090" format="[general]"  name=bz edit.limit=50 edit.case=any edit.autoselect=yes edit.autohscroll=yes  font.face="宋体" font.height="-11" font.weight="700"  font.family="2" font.pitch="2" font.charset="134" background.mode="1" background.color="536870912" )
+column(band=detail id=19 alignment="0" tabsequence=150 border="4" color="0" x="3086" y="892" height="68" width="398" format="0.00%"  name=xybhd edit.limit=0 edit.case=any edit.autoselect=yes  font.face="宋体" font.height="-11" font.weight="700"  font.family="2" font.pitch="2" font.charset="134" background.mode="1" background.color="536870912" )
+column(band=detail id=11 alignment="0" tabsequence=90 border="4" color="0" x="1536" y="548" height="68" width="1207" format="[general]"  name=cbzd edit.limit=20 edit.case=any edit.autoselect=yes edit.autohscroll=yes  font.face="宋体" font.height="-11" font.weight="700"  font.family="2" font.pitch="2" font.charset="134" background.mode="1" background.color="536870912" )
+column(band=detail id=18 alignment="0" tabsequence=140 border="4" color="0" x="2139" y="892" height="68" width="210" format="[general]"  name=xy edit.limit=0 edit.case=any edit.autoselect=yes  font.face="宋体" font.height="-11" font.weight="700"  font.family="2" font.pitch="2" font.charset="134" background.mode="1" background.color="536870912" )
+column(band=detail id=17 alignment="0" tabsequence=130 border="4" color="0" x="1266" y="892" height="68" width="210" format="[general]"  name=mb edit.limit=0 edit.case=any edit.autoselect=yes  font.face="宋体" font.height="-11" font.weight="700"  font.family="2" font.pitch="2" font.charset="134" background.mode="1" background.color="536870912" )
+column(band=detail id=16 alignment="0" tabsequence=120 border="4" color="0" x="393" y="892" height="68" width="210" format="[General]"  name=tw edit.limit=0 edit.case=any edit.autoselect=yes  font.face="宋体" font.height="-11" font.weight="700"  font.family="2" font.pitch="2" font.charset="134" background.mode="1" background.color="536870912" )
+column(band=detail id=10 alignment="0" tabsequence=80 border="4" color="0" x="393" y="548" height="68" width="763" format="[general]"  name=ksmc edit.limit=20 edit.case=any edit.autoselect=yes edit.autohscroll=yes  font.face="宋体" font.height="-11" font.weight="700"  font.family="2" font.pitch="2" font.charset="134" background.mode="1" background.color="536870912" )
+column(band=detail id=7 alignment="0" tabsequence=20 border="4" color="0" x="393" y="204" height="68" width="416" format="yyyy-mm-dd"  name=csrq editmask.mask="yyyy-mm-dd"  font.face="宋体" font.height="-11" font.weight="700"  font.family="2" font.pitch="2" font.charset="134" background.mode="1" background.color="536870912" )
+column(band=detail id=1 alignment="0" tabsequence=32766 border="4" color="0" x="393" y="32" height="68" width="416" format="[general]"  name=jlxh edit.limit=9 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="System" font.height="-11" font.weight="400"  font.family="2" font.pitch="2" font.charset="134" background.mode="1" background.color="553648127" )
+column(band=detail id=8 alignment="0" tabsequence=60 border="4" color="0" x="393" y="376" height="68" width="416" format="[general]"  name=zy edit.limit=20 edit.case=any edit.autoselect=yes edit.autohscroll=yes  font.face="宋体" font.height="-11" font.weight="700"  font.family="2" font.pitch="2" font.charset="134" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="登记日期："border="0" color="0" x="832" y="32" height="68" width="343"  name=djrq_t  font.face="宋体" font.height="-11" font.weight="400"  font.family="0" font.pitch="2" font.charset="134" background.mode="1" background.color="536870912" )
+column(band=detail id=3 alignment="0" tabsequence=32766 border="4" color="0" x="1189" y="32" height="68" width="416" format="yyyy-mm-dd"  name=djrq edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="宋体" font.height="-11" font.weight="400"  font.family="2" font.pitch="2" font.charset="134" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="就诊卡号："border="0" color="0" x="1627" y="32" height="68" width="343"  name=jzkh_t  font.face="宋体" font.height="-11" font.weight="400"  font.family="0" font.pitch="2" font.charset="134" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="0" tabsequence=32766 border="4" color="0" x="1984" y="32" height="68" width="750" format="[general]"  name=jzkh edit.limit=20 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="System" font.height="-11" font.weight="400"  font.family="2" font.pitch="2" font.charset="134" background.mode="1" background.color="553648127" )
+text(band=detail alignment="0" text="姓    名："border="0" color="0" x="2757" y="32" height="68" width="343"  name=brxm_t  font.face="宋体" font.height="-11" font.weight="400"  font.family="0" font.pitch="2" font.charset="134" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="性别："border="0" color="0" x="832" y="204" height="68" width="192"  name=xb_t  font.face="宋体" font.height="-11" font.weight="400"  font.family="0" font.pitch="2" font.charset="134" background.mode="1" background.color="536870912" )
+column(band=detail id=6 alignment="2" tabsequence=30 border="4" color="0" x="1042" y="204" height="68" width="137" format="[general]"  name=xb ddlb.limit=0 ddlb.allowedit=no ddlb.case=any  font.face="宋体" font.height="-11" font.weight="700"  font.family="2" font.pitch="2" font.charset="134" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="入院时间："border="0" color="0" x="1202" y="204" height="68" width="343"  name=rysj_t  font.face="宋体" font.height="-11" font.weight="400"  font.family="0" font.pitch="2" font.charset="134" background.mode="1" background.color="536870912" )
+column(band=detail id=4 alignment="0" tabsequence=40 border="4" color="0" x="1559" y="204" height="68" width="658" format="yyyy-mm-dd hh:mm"  name=rysj editmask.mask="yyyy-mm-dd hh:mm"  font.face="宋体" font.height="-11" font.weight="700"  font.family="2" font.pitch="2" font.charset="134" background.mode="1" background.color="536870912" )
+text(band=detail alignment="1" text="联系地址："border="0" color="0" x="832" y="376" height="68" width="343"  name=lxdz_t  font.face="宋体" font.height="-11" font.weight="400"  font.family="0" font.pitch="2" font.charset="134" background.mode="1" background.color="536870912" )
+column(band=detail id=5 alignment="0" tabsequence=10 border="4" color="0" x="3113" y="32" height="68" width="370" format="[general]" protect="0~t0"  name=brxm edit.limit=10 edit.case=any edit.autoselect=yes edit.autohscroll=yes  font.face="宋体" font.height="-11" font.weight="700"  font.family="2" font.pitch="2" font.charset="134" background.mode="1" background.color="536870912" )
+column(band=detail id=14 alignment="0" tabsequence=70 border="4" color="0" x="1189" y="376" height="68" width="2295" format="[general]"  name=lxdz edit.limit=50 edit.case=any edit.autoselect=yes edit.autohscroll=yes  font.face="宋体" font.height="-11" font.weight="700"  font.family="2" font.pitch="2" font.charset="134" background.mode="1" background.color="536870912" )
+text(band=detail alignment="1" text="联系电话："border="0" color="0" x="2240" y="204" height="68" width="343"  name=lxdh_t  font.face="宋体" font.height="-11" font.weight="400"  font.family="0" font.pitch="2" font.charset="134" background.mode="1" background.color="536870912" )
+column(band=detail id=13 alignment="0" tabsequence=50 border="4" color="0" x="2597" y="204" height="68" width="887" format="[general]"  name=lxdh edit.limit=20 edit.case=any edit.autoselect=yes edit.autohscroll=yes  font.face="宋体" font.height="-11" font.weight="700"  font.family="2" font.pitch="2" font.charset="134" background.mode="1" background.color="536870912" )
+htmltable(border="1" cellpadding="0" cellspacing="0" generatecss="no" nowrap="yes") 

@@ -1,0 +1,1 @@
+Exp80 UserId=jzs@yd/jzglxt buffer=809600  file=E:\xjback\program\急诊管理系统\DATA\temp.dmp log=E:\xjback\program\急诊管理系统\DATA\log.txt tables=mz_mzyb GRANTS=Y INDEXES=Y ROWS=Y

@@ -1,0 +1,15 @@
+alter table tjtjb modify dataobject varchar2(50);
+
+/
+
+create or replace trigger TRI_TJTJB
+before delete on tjtjb
+for each row
+
+begin
+    if deleting then
+       delete from tjtjmxb where jlxh = :old.jlxh;
+    end if;
+end TRI_TJTJB;
+
+/

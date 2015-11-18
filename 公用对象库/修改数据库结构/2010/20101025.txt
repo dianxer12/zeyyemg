@@ -1,0 +1,1 @@
+alter table ksdmb add YCPB NUMBER(1) NULL;

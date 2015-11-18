@@ -1,0 +1,138 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+backup                  ICON    DISCARDABLE     "backup.ico"
+alert                   ICON    DISCARDABLE     "alert.ico"
+arrowLeft               ICON    DISCARDABLE     "arrowLeft.ico"
+arrowRight              ICON    DISCARDABLE     "arrowRight.ico"
+author                  ICON    DISCARDABLE     "author.ico"
+bbtj                    ICON    DISCARDABLE     "bbtj.ico"
+builder                 ICON    DISCARDABLE     "builder.ico"
+change                  ICON    DISCARDABLE     "change.ico"
+changepwd               ICON    DISCARDABLE     "changepwd.ico"
+clock                   ICON    DISCARDABLE     "clock.ico"
+computer                ICON    DISCARDABLE     "computer.ico"
+config                  ICON    DISCARDABLE     "config.ico"
+connect                 ICON    DISCARDABLE     "connect.ico"
+cxfx                    ICON    DISCARDABLE     "cxfx.ico"
+database                ICON    DISCARDABLE     "database.ico"
+find                    ICON    DISCARDABLE     "find.ico"
+down                    ICON    DISCARDABLE     "down.ico"
+draw                    ICON    DISCARDABLE     "draw.ico"
+error                   ICON    DISCARDABLE     "error.ico"
+exit                    ICON    DISCARDABLE     "exit.ico"
+filter                  ICON    DISCARDABLE     "filter.ico"
+help                    ICON    DISCARDABLE     "Help.ico"
+graph                   ICON    DISCARDABLE     "graph.ico"
+hello                   ICON    DISCARDABLE     "hello.ico"
+hlbglxt                 ICON    DISCARDABLE     "hlbglxt.ico"
+home                    ICON    DISCARDABLE     "home.ico"
+ksdm                    ICON    DISCARDABLE     "ksdm.ico"
+log                     ICON    DISCARDABLE     "log.ico"
+open                    ICON    DISCARDABLE     "open.ico"
+login                   ICON    DISCARDABLE     "login.ICO"
+new1                    ICON    DISCARDABLE     "new.ico"
+notes                   ICON    DISCARDABLE     "notes.ico"
+notice                  ICON    DISCARDABLE     "notice.ico"
+ok                      ICON    DISCARDABLE     "ok.ico"
+print                   ICON    DISCARDABLE     "print.ico"
+operate                 ICON    DISCARDABLE     "operate.ico"
+order                   ICON    DISCARDABLE     "order.ico"
+out                     ICON    DISCARDABLE     "out.ico"
+point                   ICON    DISCARDABLE     "point.ico"
+tj                      ICON    DISCARDABLE     "tj.ico"
+query                   ICON    DISCARDABLE     "query.ico"
+recycle                 ICON    DISCARDABLE     "recycle.ico"
+report                  ICON    DISCARDABLE     "report.ico"
+save                    ICON    DISCARDABLE     "save.ico"
+tasks                   ICON    DISCARDABLE     "tasks.ico"
+work                    ICON    DISCARDABLE     "work.ico"
+tools                   ICON    DISCARDABLE     "tools.ico"
+undo                    ICON    DISCARDABLE     "undo.ico"
+up                      ICON    DISCARDABLE     "up.ico"
+users                   ICON    DISCARDABLE     "users.ico"
+window                  ICON    DISCARDABLE     "window.ico"
+write                   ICON    DISCARDABLE     "write.ICO"
+graph09                 ICON    DISCARDABLE     "GRAPH09.ICO"
+rctj                    ICON    DISCARDABLE     "rctj.ico"
+about                   ICON    DISCARDABLE     "about.ico"
+jzglxt                  ICON    DISCARDABLE     "jzglxt.ico"
+mzzlglxt                ICON    DISCARDABLE     "mzzlglxt.ico"
+graph12                 ICON    DISCARDABLE     "GRAPH12.ICO"
+pie                     ICON    DISCARDABLE     "pie.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+forbid                  CURSOR  DISCARDABLE     "forbid.cur"
+hand                    CURSOR  DISCARDABLE     "hand.cur"
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

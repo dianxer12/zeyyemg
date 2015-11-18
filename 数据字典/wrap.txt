@@ -1,0 +1,15 @@
+set NLS_LANG=AMERICAN_AMERICA.USACII7 
+£®ªÚ’ﬂ£∫set NLS_LANG=AMERICAN_AMERICA.WE8ISO8859P1 £©
+
+wrap10g iname=e:\wrap\uf_get_rts.sql oname=e:\wrap\uf_get_rts.plb
+wrap10g iname=e:\wrap\uf_get_ews.sql oname=e:\wrap\uf_get_ews.plb
+wrap10g iname=e:\wrap\uf_get_yjfj.sql oname=e:\wrap\uf_get_yjfj.plb
+wrap10g iname=e:\wrap\uf_get_age.sql oname=e:\wrap\uf_get_age.plb
+wrap10g iname=e:\wrap\uf_get_yhqx.sql oname=e:\wrap\uf_get_yhqx.plb
+wrap10g iname=e:\wrap\uf_cal_day.sql oname=e:\wrap\uf_cal_day.plb
+wrap10g iname=e:\wrap\uf_cal_hour.sql oname=e:\wrap\uf_cal_hour.plb
+
+wrap10g iname=e:\wrap\up_auto_interface.sql oname=e:\wrap\up_auto_interface.plb
+wrap10g iname=e:\wrap\up_update_jzyjbrdjxx.sql oname=e:\wrap\up_update_jzyjbrdjxx.plb
+wrap10g iname=e:\wrap\up_update_jzyjbrdjxx(jzs2).sql oname=e:\wrap\up_update_jzyjbrdjxx(jzs2).plb
+wrap10g iname=e:\wrap\up_sync_yhb.sql oname=e:\wrap\up_sync_yhb.plb

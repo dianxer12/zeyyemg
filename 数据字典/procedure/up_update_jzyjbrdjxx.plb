@@ -1,0 +1,37 @@
+create or replace procedure jzs.up_update_jzyjbrdjxx wrapped 
+a000000
+354
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+7
+d0e 402
+JyIt4nJLZ+e18ru121iF9DeKw1swg5Wc10jrZy/GvoOuf3jahS0lwO+g8bGHqyDk97l7dzNs
+4Y0MrpRRCTVCWOEXFMXIyH29zJS99DOmljdndlPAcJ+kSS236GPlq9Xen+gDA50xtYNY0jCK
+CWRyPorNyzOfxCwiEHq0Qvl+wbO3zZBzEFUfe90dl0JHCOvuSMbuCosnCj0RHkZIzvfiKaOd
+wa29RKeZE0MdpxdfuNDzuPWypjYuqVekVB1eUKlFvTBhoLtOV1bBRkKnMjdU78eMt+iPp2/u
+XxreH3q0/Gk2bN+ZCVhyDXh7J32iHKtWu/Jk6nQa0LST6GakX4lqQGPIIbJgr7YUQ1TRtu7e
+VDjmx76iPliLa0iKzLYt4w3giE//dPY9ZUoP/adSzu7SB7NUZdjVzskB+IkLk1kwNUFcMFBx
+Gy7IIz3vZHYMG5ceojoJ9GBOG1mGwx8JYkZUSw5wjUMwQEoeh3Qg9+CsCxJ0IBgyL1hpKM0b
+2Mrj7Ctghqq66yKNsR8vgdYO0ut3H/QWJiDW0vaVMqj4FDM0xehmcD/phufdlmameMuEJPeM
+BjIIeNPZ9uYHP5Fm48DqT5FWgCdlOGLct4IQ7NTG6GhkCYdZr4tWZrQqVlLezD3bGE2M/GQb
+J/varpXeiq2r/4lLWpUTp2k+DUoiQh2Hnc890ngWpFbxSLzAfMcusUvfxeBmQTT5gGcqOGFi
+2HgCQ4btqdjKUSILYaOxwx5Y0ViRh4xeIMer6qFx9vLJo/Hp3pGnFSTHWrl9C0z8JQ9lEmsm
+XlddsKAuaO0Sm4nlLpVBtWg7acxT9gSMJwlhdioUYUeVhjtN0ClwYz08DZsREXsuTIMM5Fcl
+XDLz270lvd2d9+Un0seGuasUCGf5j3yVycp/QISMMX6raqiDBLblgltTaS8vxs1vp4Dmf+P4
+oWRPtM4cNj+iLoZzmgPQgCC8tfkz/H3B7q/BlrvcStz/Sq4PNHOBgXLZHR2Cs4X2mpJbyrut
+Xw==
+
+/

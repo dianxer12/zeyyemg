@@ -1,0 +1,7 @@
+set NLS_LANG=AMERICAN_AMERICA.USACII7 
+£®ªÚ’ﬂ£∫set NLS_LANG=AMERICAN_AMERICA.WE8ISO8859P1 £©
+
+wrap10g iname=f:\wrap\uf_get_yhqx.sql oname=f:\wrap\uf_get_yhqx.plb
+
+
+

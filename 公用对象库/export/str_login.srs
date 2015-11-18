@@ -1,0 +1,18 @@
+$PBExportHeader$str_login.srs
+$PBExportComments$登陆结构信息
+[Added By xj 2002-01-18]
+global type str_login from structure
+	integer		xtxh
+	string		xtmc
+	string		userid
+	string		username
+	string		userpwd
+	integer		yhzxh
+	datetime		today
+	string		hospital
+	integer		returnparm
+	string		database
+	boolean		select_one
+	boolean		esc
+end type
+
