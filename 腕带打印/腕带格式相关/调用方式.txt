@@ -1,0 +1,8 @@
+--定义
+Subroutine Make(string ucData, long nDataLen,long nErrLevel,long nMask, integer nBarEdition,  string szBmpFileName, long nScale) library "MakeQRBarcode.dll"
+
+--调用
+//生成条码信息
+ls_info = 'WD|'+ls_Bah+'|'+string(al_patient_no)+'|'
+ls_PicPath=Login.CurrDir + '\tiaoma.bmp'
+Make(ls_info, len(ls_info),2,3,4,ls_PicPath,10);
