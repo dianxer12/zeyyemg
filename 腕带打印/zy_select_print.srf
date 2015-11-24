@@ -1,0 +1,111 @@
+$PBExportHeader$zy_select_print.srf
+global type zy_select_print from function_object
+end type
+
+forward prototypes
+global function string zy_select_print (string as_printername, string as_receiptname)
+end prototypes
+
+global function string zy_select_print (string as_printername, string as_receiptname);//选择当前打印机
+//As_printername:
+string ls_path,ls_name,ls_csmc,ls_printer
+string Ls_ValueArray[],  Ls_PrinterName
+integer pos,li_xtcs
+Int i,li_Rtn,Li_pos
+Boolean Lb_Find
+
+If Login.env_ostype='WindowsNT!' Then
+	//还原原默认打印机 JinWei 20070831
+	If Trim(As_printername)="" Then
+		If Gf_Null2Space(Gs_DefaultPrinter_old)<>'' Then
+		   li_Rtn=RegistrySet("HKEY_CURRENT_USER\Software\Microsoft\Windows NT\CurrentVersion\Windows","Device",RegString!,Gs_DefaultPrinter_old)			
+		End If
+		Return ''
+	Else
+		li_Rtn=RegistryGet( "HKEY_CURRENT_USER\Software\Microsoft\Windows NT\CurrentVersion\Windows","Device",RegString!,Gs_DefaultPrinter_old) 
+	End If
+	
+	//处理WindowsXP共享名问题：如共享打印机名为:cysj在192.168.1.1上，则原程序就不能识别此打印机名 JinWei 20070829
+	li_Rtn = RegistryValues("HKEY_CURRENT_USER\Software\Microsoft\Windows NT\CurrentVersion\devices",Ls_ValueArray)
+   For i=1 To UpperBound(Ls_ValueArray)
+		Ls_PrinterName = Ls_ValueArray[i]
+		Do While True 
+			Li_Pos = Pos(Ls_PrinterName,'\') //共享打印机名格式为:\\192.168.1.1\cysj
+			If Li_pos <=0 Then
+				Exit
+		   Else
+				Ls_PrinterName = Mid(Ls_PrinterName,Li_Pos+1)
+			End If
+		Loop
+		If Trim(Ls_PrinterName)=As_printername Then
+			Lb_Find = True
+			li_Rtn=RegistryGet( "HKEY_CURRENT_USER\Software\Microsoft\Windows NT\CurrentVersion\devices",Ls_ValueArray[i],RegString!,ls_name)
+			ls_printer = Ls_ValueArray[i] + ',' + Ls_Name
+			li_Rtn=RegistrySet("HKEY_CURRENT_USER\Software\Microsoft\Windows NT\CurrentVersion\Windows","Device",RegString!,ls_printer)			
+			Exit
+		Else
+			Lb_Find = False
+		End If
+	Next
+	
+	If Lb_Find = False Then
+		If Messagebox(login.msg_title,'当前系统未安装【'+As_receiptname+'('+As_printername+')】打印机~r  是否采用默认打印机打印?'+As_receiptname,Question!,yesno!,1)=2 then
+			Return 'NOFOUND' //增加返回值(有时要求必须在指定的打印机上打印)  JinWei 20070925
+		End If
+	End If
+	Return ''
+End If
+
+
+//Windows98下调用
+ls_path=Login.windowspath
+if isnull(ls_path) or trim(ls_path)='' then ls_path='c:\windows'
+ls_name   =profilestring(ls_path+'\win.ini','Devices',As_printername,'*')
+ls_csmc='PNT'+upper(As_printername)
+ls_printer=profilestring(ls_path+'\medicare.ini','Pinters',ls_csmc,'*')
+if ls_printer='*' then //打印机尚未在系统文件中设置
+	li_xtcs=0
+else
+	li_xtcs=1
+	As_printername=ls_printer
+end if
+if ls_name='*' or As_printername='' then
+	if li_xtcs=1 then
+	else	
+		if As_printername='' then
+		else
+			if messagebox(login.msg_title,'当前系统未安装'+As_receiptname+'('+As_printername+')打印机~r  采用默认打印机打印'+As_receiptname,Question!,yesno!,1)=2 then
+				messagebox(login.msg_title,'当前系统尚未安装'+As_receiptname+'打印机',stopsign!)
+				return ''
+			end if
+		end if			
+	end if
+	RegistryGet("HKEY_CURRENT_CONFIG\System\CurrentControlSet\Control\Print\Printers", "Default", RegString!,As_printername)
+	ls_name=profilestring(ls_path+'\win.ini','Devices',As_printername,'*')
+	if ls_name='*' then
+		If As_printername='' Then
+		Else
+		   messagebox(login.msg_title,'当前系统尚未安装打印机',stopsign!)
+		End If
+		return ''
+	end if
+end if
+if SetProfileString(ls_path+'\win.ini','windows','device',As_printername+','+ls_name)=1 then
+else
+	messagebox(login.msg_title,'找不到系统文件,导致打印选择不成功',stopsign!)
+	return ''
+end if
+integer li_FileNum
+li_FileNum=FileOpen(ls_path+'\medicare.ini',LineMode!, Read!)
+if li_FileNum=-1 or isnull(li_FileNum) then 
+	li_FileNum=FileOpen(ls_path+'\medicare.ini',LineMode!,Write!)
+end if
+FileClose(li_FileNum)	
+if ls_csmc='PNT' or isnull(ls_csmc) then
+else	
+	Setprofilestring(ls_path+'\medicare.ini','Pinters',ls_csmc,As_printername)
+end if
+return ''
+
+end function
+
